@@ -66,8 +66,8 @@ export default function PostsIndex({ posts, categories, filters }: Props) {
                     </p>
 
                     {/* Filters */}
-                    <div className="mt-8 flex flex-wrap gap-3">
-                        <div className="relative flex-1 min-w-[200px] max-w-sm">
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <div className="relative w-full flex-1 sm:min-w-[200px] sm:max-w-sm">
                             <Search size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50" />
                             <input
                                 type="text"
@@ -122,7 +122,7 @@ export default function PostsIndex({ posts, categories, filters }: Props) {
                     </div>
                 ) : (
                     <>
-                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             {posts.data.map((post) => (
                                 <PublicPostCard key={post.id} post={post} />
                             ))}

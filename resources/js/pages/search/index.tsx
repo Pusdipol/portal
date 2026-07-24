@@ -81,7 +81,7 @@ export default function SearchIndex({ query: initialQuery, results, totalResults
                         Cari buku, artikel jurnal, dan berita sekaligus.
                     </p>
 
-                    <form onSubmit={handleSearch} className="mx-auto mt-8 flex max-w-2xl gap-2">
+                    <form onSubmit={handleSearch} className="mx-auto mt-8 flex max-w-2xl flex-col gap-3 sm:flex-row sm:gap-2">
                         <div className="relative flex-1">
                             <Search size={22} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50" />
                             <input
@@ -95,7 +95,7 @@ export default function SearchIndex({ query: initialQuery, results, totalResults
                         </div>
                         <button
                             type="submit"
-                            className="h-14 rounded-xl bg-[#ffe100] px-6 text-sm font-bold text-[#1f5476] transition hover:bg-[#ffe100]/90 hover:shadow-lg"
+                            className="h-14 w-full rounded-xl bg-[#ffe100] px-6 text-sm font-bold text-[#1f5476] transition hover:bg-[#ffe100]/90 hover:shadow-lg sm:w-auto"
                         >
                             Cari
                         </button>
@@ -144,7 +144,7 @@ export default function SearchIndex({ query: initialQuery, results, totalResults
 
                                     <h2 className="text-2xl font-bold text-[#1f5476]">Buku Publikasi ({results.books.length})</h2>
                                 </div>
-                                <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                                <div className="grid grid-cols-1 gap-6 min-[400px]:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                                     {results.books.map((book) => (
                                         <PublicBookCard key={book.id} book={book} />
                                     ))}
@@ -159,7 +159,7 @@ export default function SearchIndex({ query: initialQuery, results, totalResults
 
                                     <h2 className="text-2xl font-bold text-[#1f5476]">Berita & Kegiatan ({results.posts.length})</h2>
                                 </div>
-                                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                                     {results.posts.map((post) => (
                                         <PublicPostCard key={post.id} post={post} />
                                     ))}

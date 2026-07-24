@@ -66,9 +66,9 @@ export default function BooksIndex({ books, categories, filters }: Props) {
                     </p>
 
                     {/* Filter bar */}
-                    <div className="mt-8 flex flex-wrap gap-3">
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                         {/* Search */}
-                        <div className="relative flex-1 min-w-[200px] max-w-sm">
+                        <div className="relative w-full flex-1 sm:min-w-[200px] sm:max-w-sm">
                             <Search size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50" />
                             <input
                                 type="text"
@@ -128,7 +128,7 @@ export default function BooksIndex({ books, categories, filters }: Props) {
                     </div>
                 ) : (
                     <>
-                        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                        <div className="grid grid-cols-1 gap-6 min-[400px]:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                             {books.data.map((book) => (
                                 <PublicBookCard key={book.id} book={book} />
                             ))}

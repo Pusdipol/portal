@@ -17,7 +17,7 @@ export default function About() {
                     }}
                 ></div>
                 <div className="relative mx-auto max-w-4xl text-center text-white">
-                    <h1 className="mb-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                    <h1 className="mb-6 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
                         Tentang <span className="text-[#ffe100]">Kami</span>
                     </h1>
                     <p className="mx-auto max-w-2xl text-lg text-white/80 sm:text-xl">

@@ -102,7 +102,7 @@ export default function Home({
                             Universitas Langlangbuana
                         </div>
 
-                        <h1 className="text-4xl leading-tight font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+                        <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
                             Portal Publikasi
                             <br />
                             <span className="text-[#2596be]">
@@ -119,7 +119,7 @@ export default function Home({
                         {/* Search */}
                         <form
                             onSubmit={handleSearch}
-                            className="mt-8 flex max-w-lg gap-2"
+                            className="mt-8 flex max-w-lg flex-col gap-3 sm:flex-row sm:gap-2"
                         >
                             <div className="relative flex-1">
                                 <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50" />
@@ -142,16 +142,16 @@ export default function Home({
                         </form>
 
                         {/* CTA Buttons */}
-                        <div className="mt-6 flex flex-wrap gap-3">
+                        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                             <Link
                                 href="/jurnal"
-                                className="inline-flex items-center gap-2 rounded-xl bg-[#2596be] px-6 py-3 text-sm font-bold text-white shadow transition hover:-translate-y-0.5 hover:bg-[#2596be]/90 hover:shadow-lg"
+                                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#2596be] px-6 py-3 text-sm font-bold text-white shadow transition hover:-translate-y-0.5 hover:bg-[#2596be]/90 hover:shadow-lg sm:w-auto"
                             >
                                 Jelajahi Jurnal
                             </Link>
                             <Link
                                 href="/buku"
-                                className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/20"
+                                className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/20 sm:w-auto"
                             >
                                 Katalog Buku
                             </Link>
@@ -163,7 +163,7 @@ export default function Home({
             {/* ─────────────────────── STATS BAR ─────────────────────── */}
             <section className="border-b border-[#ffe100]/30 bg-[#ffe100]">
                 <div className="mx-auto max-w-7xl px-6 py-5 lg:px-12">
-                    <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
                         {[
                             {
                                 value: latestArticles.length > 0 ? '50+' : '0',
@@ -236,7 +236,7 @@ export default function Home({
                             subtitle="Koleksi buku ilmiah terbaru dari PSK"
                             seeAllHref="/buku"
                         />
-                        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                        <div className="grid grid-cols-1 gap-6 min-[400px]:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                             {latestBooks.slice(0, 5).map((book) => (
                                 <PublicBookCard key={book.id} book={book} />
                             ))}
@@ -262,7 +262,7 @@ export default function Home({
                             subtitle="Informasi terbaru dari Pusat Studi Kepolisian"
                             seeAllHref="/berita"
                         />
-                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             {latestPosts.slice(0, 3).map((post) => (
                                 <PublicPostCard key={post.id} post={post} />
                             ))}
@@ -282,16 +282,16 @@ export default function Home({
                         Daftarkan diri dan submit artikel ke jurnal Pusat Studi
                         Kepolisian Universitas Langlangbuana.
                     </p>
-                    <div className="mt-6 flex justify-center gap-4">
+                    <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
                         <Link
                             href="/register"
-                            className="inline-flex items-center gap-2 rounded-xl bg-[#ffe100] px-6 py-3 text-sm font-bold text-[#1f5476] transition hover:-translate-y-0.5 hover:shadow-lg"
+                            className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#ffe100] px-6 py-3 text-sm font-bold text-[#1f5476] transition hover:-translate-y-0.5 hover:shadow-lg sm:w-auto"
                         >
                             Daftar Sekarang
                         </Link>
                         <Link
                             href="/jurnal"
-                            className="inline-flex items-center gap-2 rounded-xl border-2 border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+                            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10 sm:w-auto"
                         >
                             Lihat Jurnal
                         </Link>

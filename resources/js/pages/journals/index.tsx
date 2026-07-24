@@ -48,7 +48,7 @@ export default function JournalsIndex({ journals }: { journals: Journal[] }) {
                         {journals.map((journal) => (
                             <div
                                 key={journal.id}
-                                className="group flex items-start gap-6 rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-200 hover:border-[#2596be]/30 hover:shadow-lg"
+                                className="group flex flex-col items-start gap-4 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-200 hover:border-[#2596be]/30 hover:shadow-lg sm:flex-row sm:gap-6 sm:p-6"
                             >
                                 {/* Logo */}
                                 <div className="shrink-0">
@@ -80,16 +80,16 @@ export default function JournalsIndex({ journals }: { journals: Journal[] }) {
                                                 </p>
                                             )}
 
-                                            <div className="mt-4 flex flex-wrap items-center gap-4">
+                                            <div className="mt-4 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                                                 {/* Article count badge */}
-                                                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#2596be]/10 px-3 py-1 text-xs font-bold text-[#2596be]">
+                                                <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-[#2596be]/10 px-3 py-1 text-xs font-bold text-[#2596be]">
 
                                                     {journal.articles_count} Artikel
                                                 </span>
 
                                                 <Link
                                                     href={`/jurnal/${journal.id}`}
-                                                    className="inline-flex items-center gap-1.5 rounded-lg bg-[#1f5476] px-4 py-2 text-xs font-bold text-white transition hover:bg-[#2596be]"
+                                                    className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#1f5476] px-4 py-2 text-xs font-bold text-white transition hover:bg-[#2596be]"
                                                 >
                                                     Lihat Artikel →
                                                 </Link>
@@ -98,7 +98,7 @@ export default function JournalsIndex({ journals }: { journals: Journal[] }) {
                                                     href={journal.ojs_base_url}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-1.5 rounded-lg border border-gray-200 px-4 py-2 text-xs font-semibold text-gray-600 transition hover:border-[#2596be] hover:text-[#2596be]"
+                                                    className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-200 px-4 py-2 text-xs font-semibold text-gray-600 transition hover:border-[#2596be] hover:text-[#2596be]"
                                                 >
 
                                                     Buka di OJS

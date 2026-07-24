@@ -176,7 +176,7 @@ export default function GuestLayout({
 
                 {/* Mobile Menu */}
                 {mobileOpen && (
-                    <div className="border-t border-gray-100 bg-white px-6 pb-4 md:hidden">
+                    <div className="absolute top-full left-0 right-0 border-b border-gray-100 bg-white px-6 pb-4 shadow-lg md:hidden">
                         <nav className="flex flex-col gap-1 pt-3">
                             {navLinks.map(({ href, label }) => (
                                 <Link
@@ -198,8 +198,8 @@ export default function GuestLayout({
 
             {/* ── Footer ── */}
             <footer className="bg-[#1f5476] text-white/80">
-                <div className="mx-auto max-w-7xl px-6 py-14 lg:px-12">
-                    <div className="grid gap-10 md:grid-cols-3">
+                <div className="mx-auto max-w-7xl px-6 py-10 lg:px-12 lg:py-14">
+                    <div className="grid gap-8 md:grid-cols-3 lg:gap-10">
                         {/* Col 1 – Branding */}
                         <div>
                             <PublicLogo variant="dark" />
