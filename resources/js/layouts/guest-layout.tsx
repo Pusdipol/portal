@@ -176,7 +176,7 @@ export default function GuestLayout({
 
                 {/* Mobile Menu */}
                 {mobileOpen && (
-                    <div className="absolute top-full left-0 right-0 border-b border-gray-100 bg-white px-6 pb-4 shadow-lg md:hidden">
+                    <div className="absolute top-full right-0 left-0 border-b border-gray-100 bg-white px-6 pb-4 shadow-lg md:hidden">
                         <nav className="flex flex-col gap-1 pt-3">
                             {navLinks.map(({ href, label }) => (
                                 <Link
@@ -243,10 +243,10 @@ export default function GuestLayout({
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <a
-                                        href="mailto:psk@unla.ac.id"
+                                        href="mailto:info@pusdipol.com"
                                         className="transition-colors hover:text-white"
                                     >
-                                        psk@unla.ac.id
+                                        info@pusdipol.com
                                     </a>
                                 </li>
                                 <li className="flex items-center gap-2">
