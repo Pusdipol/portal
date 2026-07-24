@@ -61,18 +61,13 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
 
-      - name: Add Host to known_hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -p ${{ secrets.DEPLOY_PORT }} ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
-
       ##################################
       # Upload
       ##################################
       - name: Sync Files
         run: |
           rsync -az --delete \
-            -e "ssh -p ${{ secrets.DEPLOY_PORT }}" \
+            -e "ssh -p ${{ secrets.DEPLOY_PORT }} -o StrictHostKeyChecking=no" \
             --exclude ".git" \
             --exclude ".github" \
             --exclude ".env" \
@@ -88,7 +83,7 @@ jobs:
       ##################################
       - name: Run Laravel Commands
         run: |
-          ssh -p ${{ secrets.DEPLOY_PORT }} \
+          ssh -p ${{ secrets.DEPLOY_PORT }} -o StrictHostKeyChecking=no \
           ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} << 'EOF'
 
           set -e
