@@ -103,7 +103,7 @@ export default function Home({
                         </div>
 
                         <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
-                            Portal Publikasi
+                            TESTPortal Publikasi
                             <br />
                             <span className="text-[#2596be]">
                                 Pusat Studi
@@ -122,7 +122,10 @@ export default function Home({
                             className="mt-8 flex max-w-lg flex-col gap-3 sm:flex-row sm:gap-2"
                         >
                             <div className="relative flex-1">
-                                <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50" />
+                                <Search
+                                    size={18}
+                                    className="absolute top-1/2 left-4 -translate-y-1/2 text-white/50"
+                                />
                                 <input
                                     type="text"
                                     placeholder="Cari buku, jurnal, atau berita..."
@@ -274,7 +277,6 @@ export default function Home({
             {/* ─────────────────────── CTA BOTTOM ─────────────────────── */}
             <section className="bg-[#2596be] py-14">
                 <div className="mx-auto max-w-7xl px-6 text-center lg:px-12">
-
                     <h2 className="text-2xl font-extrabold text-white md:text-3xl">
                         Ingin mempublikasikan penelitian Anda?
                     </h2>
