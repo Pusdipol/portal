@@ -78,6 +78,8 @@ jobs:
             --exclude ".env" \
             --exclude "node_modules" \
             --exclude "storage/logs" \
+            --exclude "jurnal" \
+            --exclude "buku" \
             ./ \
             ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}
 
