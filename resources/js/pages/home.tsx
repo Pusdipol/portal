@@ -102,7 +102,7 @@ export default function Home({
                             Universitas Langlangbuana
                         </div>
 
-                        <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-[#ffe100] md:text-5xl lg:text-6xl">
+                        <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
                             Portal Publikasi
                             <br />
                             <span className="text-[#2596be]">
