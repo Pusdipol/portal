@@ -257,22 +257,22 @@ export default function About() {
                                 {
                                     title: 'Koordinator Bidang Kajian Harkamtibmas, Perlindungan, Pengayoman, dan Pelayanan Masyarakat',
                                     photoUrl:
-                                        'https://randomuser.me/api/portraits/men/11.jpg',
+                                        'https://ui-avatars.com/api/?name=Koordinator+1&background=f8fafc&color=1f5476&bold=true',
                                 },
                                 {
                                     title: 'Koordinator Bidang Kajian Penegakan Hukum, Keamanan Nasional, dan Keamanan Dalam Negeri',
                                     photoUrl:
-                                        'https://randomuser.me/api/portraits/women/12.jpg',
+                                        'https://ui-avatars.com/api/?name=Koordinator+2&background=f8fafc&color=1f5476&bold=true',
                                 },
                                 {
                                     title: 'Koordinator Bidang Kajian Isu Strategis, Ketahanan Pangan, Siber, Korupsi, TPPU, dan Kejahatan Transnasional',
                                     photoUrl:
-                                        'https://randomuser.me/api/portraits/men/71.jpg',
+                                        'https://ui-avatars.com/api/?name=Koordinator+3&background=f8fafc&color=1f5476&bold=true',
                                 },
                                 {
                                     title: 'STAF TATA USAHA',
                                     photoUrl:
-                                        'https://randomuser.me/api/portraits/women/44.jpg',
+                                        'https://ui-avatars.com/api/?name=Tata+Usaha&background=f8fafc&color=1f5476&bold=true',
                                 },
                             ].map((branch, idx) => (
                                 <div
