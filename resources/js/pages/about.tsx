@@ -227,7 +227,7 @@ export default function About() {
                     <div className="mt-12 flex w-full flex-col items-center overflow-x-hidden rounded-3xl border border-gray-100 bg-gray-50/50 px-4 py-12 shadow-sm md:px-8">
                         {/* REKTOR */}
                         <OrgNode
-                            title="REKTOR"
+                            title="Rektor"
                             name="Irjen. Pol. (P) Dr. Drs. A. Kamil Razak, S.H., M.H."
                             photoUrl="/images/rektor.png"
                         />
@@ -235,7 +235,7 @@ export default function About() {
 
                         {/* WAKIL REKTOR I */}
                         <OrgNode
-                            title="WAKIL REKTOR I"
+                            title="Wakil Rektor I"
                             name="Prof. Imas Rosidawati, S.H., M.H."
                             photoUrl="/images/wr-1.png"
                         />
@@ -253,7 +253,6 @@ export default function About() {
                         <div className="relative flex w-full flex-col items-center justify-center gap-0 md:flex-row md:items-stretch md:gap-4">
                             {/* Desktop Horizontal Line */}
                             <div className="absolute top-0 right-[12.5%] left-[12.5%] z-0 hidden h-0.5 bg-[#2596be]/30 md:block"></div>
-
                             {[
                                 {
                                     title: 'Koordinator Bidang Kajian Harkamtibmas, Perlindungan, Pengayoman, dan Pelayanan Masyarakat',
