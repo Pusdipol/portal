@@ -83,7 +83,7 @@ export default function SearchIndex({ query: initialQuery, results, totalResults
 
                     <form onSubmit={handleSearch} className="mx-auto mt-8 flex max-w-2xl flex-col gap-3 sm:flex-row sm:gap-2">
                         <div className="relative flex-1">
-                            <Search size={22} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50" />
+                            <Search size={22} className="pointer-events-none z-10 absolute left-4 top-1/2 -translate-y-1/2 text-white/50" />
                             <input
                                 type="text"
                                 placeholder="Ketik kata kunci pencarian..."

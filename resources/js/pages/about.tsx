@@ -2,6 +2,63 @@ import { Head } from '@inertiajs/react';
 
 import GuestLayout from '@/layouts/guest-layout';
 
+const OrgNode = ({
+    title,
+    name,
+    photoUrl,
+}: {
+    title: string;
+    name?: string;
+    photoUrl: string;
+}) => (
+    <div className="group relative z-10 flex h-full w-full flex-col items-center">
+        <div className="relative h-full w-full max-w-[200px] overflow-hidden rounded-[20px] border border-gray-100 bg-white p-[2px] shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+            {/* Animated chroma background border using brand colors */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1f5476] via-[#2596be] to-[#ffe100] opacity-20 transition-opacity duration-500 group-hover:opacity-100"></div>
+
+            {/* The actual light card */}
+            <div className="relative z-10 flex h-full flex-col overflow-hidden rounded-[18px] bg-white p-2 text-center">
+                {/* Chroma Grid Pattern */}
+                <div
+                    className="pointer-events-none absolute inset-0 opacity-[0.03]"
+                    style={{
+                        backgroundImage: `linear-gradient(to right, #1f5476 1px, transparent 1px), linear-gradient(to bottom, #1f5476 1px, transparent 1px)`,
+                        backgroundSize: '20px 20px',
+                    }}
+                ></div>
+
+                {/* Photo Frame - Square aspect ratio for more compact height */}
+                <div className="relative mb-3 aspect-square w-full shrink-0 overflow-hidden rounded-[14px] bg-gray-50 shadow-inner">
+                    <img
+                        src={photoUrl}
+                        alt={title}
+                        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    />
+                    {/* Gradient Overlay for premium feel on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1f5476]/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+                </div>
+
+                <div className="flex flex-1 flex-col justify-center px-1 pb-1">
+                    {name ? (
+                        <>
+                            <h3 className="relative z-10 mb-0.5 text-sm leading-tight font-bold tracking-tight text-[#1f5476] sm:text-base">
+                                {name}
+                            </h3>
+                            <p className="relative z-10 text-[10px] leading-relaxed font-medium text-[#2596be] sm:text-xs">
+                                {title}
+                            </p>
+                        </>
+                    ) : (
+                        <h3 className="relative z-10 mb-0.5 text-xs leading-relaxed font-bold tracking-wide text-[#1f5476] sm:text-sm">
+                            {title}
+                        </h3>
+                    )}
+                </div>
+            </div>
+        </div>
+    </div>
+);
+
 export default function About() {
     return (
         <GuestLayout>
@@ -29,7 +86,7 @@ export default function About() {
             </section>
 
             {/* Main Content */}
-            <section className="mx-auto max-w-4xl px-6 py-16 lg:px-12 lg:py-24">
+            <section className="mx-auto max-w-6xl px-6 py-16 lg:px-12 lg:py-24">
                 {/* Tentang */}
                 <div className="mb-20">
                     <div className="mb-8 flex items-center gap-4">
@@ -124,11 +181,11 @@ export default function About() {
                             Struktur Organisasi
                         </h2>
                     </div>
-                    <p className="mb-6 text-lg leading-relaxed text-gray-700">
+                    {/* <p className="mb-6 text-lg leading-relaxed text-gray-700">
                         Berdasarkan informasi kelembagaan pada saat
                         peluncurannya:
                     </p>
-                    <div className="grid gap-6 sm:grid-cols-2">
+                    <div className="mb-16 grid gap-6 sm:grid-cols-2">
                         <div className="flex gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:border-[#2596be]/30 hover:shadow-md">
                             <div>
                                 <h3 className="font-bold text-[#1f5476]">
@@ -163,6 +220,81 @@ export default function About() {
                                     bidang riset kepolisian.
                                 </p>
                             </div>
+                        </div>
+                    </div> */}
+
+                    {/* Org Chart */}
+                    <div className="mt-12 flex w-full flex-col items-center overflow-x-hidden rounded-3xl border border-gray-100 bg-gray-50/50 px-4 py-12 shadow-sm md:px-8">
+                        {/* REKTOR */}
+                        <OrgNode
+                            title="REKTOR"
+                            name="Irjen. Pol. (P) Dr. Drs. A. Kamil Razak, S.H., M.H."
+                            photoUrl="/images/rektor.png"
+                        />
+                        <div className="h-8 w-0.5 shrink-0 bg-[#2596be]/30"></div>
+
+                        {/* WAKIL REKTOR I */}
+                        <OrgNode
+                            title="WAKIL REKTOR I"
+                            name="Prof. Imas Rosidawati, S.H., M.H."
+                            photoUrl="/images/wr-1.png"
+                        />
+                        <div className="h-8 w-0.5 shrink-0 bg-[#2596be]/30"></div>
+
+                        {/* BKKSN */}
+                        <OrgNode
+                            title="Kepala Pusat Studi Kepolisian"
+                            name="Dr. Ahmad Johan, S.E., M.M"
+                            photoUrl="/images/KPSK.png"
+                        />
+                        <div className="h-8 w-0.5 shrink-0 bg-[#2596be]/30"></div>
+
+                        {/* Branches Container */}
+                        <div className="relative flex w-full flex-col items-center justify-center gap-0 md:flex-row md:items-stretch md:gap-4">
+                            {/* Desktop Horizontal Line */}
+                            <div className="absolute top-0 right-[12.5%] left-[12.5%] z-0 hidden h-0.5 bg-[#2596be]/30 md:block"></div>
+
+                            {[
+                                {
+                                    title: 'Koordinator Bidang Kajian Harkamtibmas, Perlindungan, Pengayoman, dan Pelayanan Masyarakat',
+                                    photoUrl:
+                                        'https://randomuser.me/api/portraits/men/11.jpg',
+                                },
+                                {
+                                    title: 'Koordinator Bidang Kajian Penegakan Hukum, Keamanan Nasional, dan Keamanan Dalam Negeri',
+                                    photoUrl:
+                                        'https://randomuser.me/api/portraits/women/12.jpg',
+                                },
+                                {
+                                    title: 'Koordinator Bidang Kajian Isu Strategis, Ketahanan Pangan, Siber, Korupsi, TPPU, dan Kejahatan Transnasional',
+                                    photoUrl:
+                                        'https://randomuser.me/api/portraits/men/71.jpg',
+                                },
+                                {
+                                    title: 'STAF TATA USAHA',
+                                    photoUrl:
+                                        'https://randomuser.me/api/portraits/women/44.jpg',
+                                },
+                            ].map((branch, idx) => (
+                                <div
+                                    key={idx}
+                                    className="flex w-full max-w-[200px] flex-1 shrink-0 flex-col items-center md:max-w-none"
+                                >
+                                    {/* Mobile vertical line */}
+                                    {idx > 0 && (
+                                        <div className="h-8 w-0.5 shrink-0 bg-[#2596be]/30 md:hidden"></div>
+                                    )}
+
+                                    <div className="relative z-10 mt-0 flex h-full w-full shrink-0 flex-col items-center md:pt-8">
+                                        {/* Desktop vertical line */}
+                                        <div className="absolute top-0 z-0 hidden h-8 w-0.5 bg-[#2596be]/30 md:block"></div>
+                                        <OrgNode
+                                            title={branch.title}
+                                            photoUrl={branch.photoUrl}
+                                        />
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

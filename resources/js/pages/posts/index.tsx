@@ -68,7 +68,7 @@ export default function PostsIndex({ posts, categories, filters }: Props) {
                     {/* Filters */}
                     <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                         <div className="relative w-full flex-1 sm:min-w-[200px] sm:max-w-sm">
-                            <Search size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50" />
+                            <Search size={15} className="pointer-events-none z-10 absolute left-4 top-1/2 -translate-y-1/2 text-white/50" />
                             <input
                                 type="text"
                                 placeholder="Cari berita..."

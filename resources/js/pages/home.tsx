@@ -98,7 +98,6 @@ export default function Home({
                     <div className="max-w-3xl">
                         {/* Eyebrow */}
                         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#ffe100]/30 bg-[#ffe100]/10 px-4 py-1.5 text-xs font-bold tracking-widest text-[#ffe100] uppercase">
-                            <GraduationCapIcon size={12} />
                             Universitas Langlangbuana
                         </div>
 
@@ -124,7 +123,7 @@ export default function Home({
                             <div className="relative flex-1">
                                 <Search
                                     size={18}
-                                    className="absolute top-1/2 left-4 -translate-y-1/2 text-white/50"
+                                    className="pointer-events-none z-10 absolute top-1/2 left-4 -translate-y-1/2 text-white/50"
                                 />
                                 <input
                                     type="text"
@@ -173,14 +172,14 @@ export default function Home({
                                 label: 'Artikel Jurnal',
                             },
                             {
-                                value: `${latestBooks.length}+`,
+                                value: `${latestBooks.length}`,
                                 label: 'Koleksi Buku',
                             },
                             {
-                                value: `${latestPosts.length}+`,
+                                value: `${latestPosts.length}`,
                                 label: 'Berita & Kegiatan',
                             },
-                            { value: '2+', label: 'Jurnal Aktif' },
+                            // { value: '2+', label: 'Jurnal Aktif' },
                         ].map(({ value, label }) => (
                             <div
                                 key={label}
