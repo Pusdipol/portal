@@ -165,7 +165,7 @@ export default function Home({
             {/* ─────────────────────── STATS BAR ─────────────────────── */}
             <section className="border-b border-[#ffe100]/30 bg-[#ffe100]">
                 <div className="mx-auto max-w-7xl px-6 py-5 lg:px-12">
-                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
+                    <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-24">
                         {[
                             {
                                 value: latestArticles.length > 0 ? '50+' : '0',
@@ -183,15 +183,13 @@ export default function Home({
                         ].map(({ value, label }) => (
                             <div
                                 key={label}
-                                className="flex items-center gap-3"
+                                className="flex flex-col items-center justify-center text-center gap-1"
                             >
-                                <div>
-                                    <div className="text-xl leading-none font-extrabold text-[#1f5476]">
-                                        {value}
-                                    </div>
-                                    <div className="mt-0.5 text-xs font-semibold text-[#1f5476]/70">
-                                        {label}
-                                    </div>
+                                <div className="text-2xl leading-none font-extrabold text-[#1f5476]">
+                                    {value}
+                                </div>
+                                <div className="text-xs font-bold text-[#1f5476]/80">
+                                    {label}
                                 </div>
                             </div>
                         ))}

@@ -10,8 +10,17 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select';
 import PublicLogo from '@/components/public/public-logo';
 import { logout } from '@/routes';
+import { Search, X } from 'lucide-react';
 
 const navLinks = [
     { href: '/', label: 'Beranda' },
@@ -31,6 +40,7 @@ export default function GuestLayout({
     };
     const [mobileOpen, setMobileOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 10);
@@ -69,20 +79,71 @@ export default function GuestLayout({
                 <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-12">
                     <PublicLogo />
 
-                    {/* Desktop Nav */}
-                    <nav
-                        className="hidden items-center gap-1 md:flex"
-                        aria-label="Navigasi utama"
-                    >
-                        {navLinks.map(({ href, label }) => (
-                            <NavLink key={href} href={href}>
-                                {label}
-                            </NavLink>
-                        ))}
-                    </nav>
+                    {/* Desktop Nav / Search */}
+                    <div className="hidden md:flex flex-1 items-center justify-end px-8">
+                        {!isSearchOpen ? (
+                            <nav
+                                className="flex items-center gap-1 animate-in fade-in zoom-in-95 duration-200"
+                                aria-label="Navigasi utama"
+                            >
+                                {navLinks.map(({ href, label }) => (
+                                    <NavLink key={href} href={href}>
+                                        {label}
+                                    </NavLink>
+                                ))}
+                            </nav>
+                        ) : (
+                            <form className="flex w-full max-w-xl items-center rounded-full border border-gray-300 bg-white py-1.5 pl-5 pr-1.5 shadow-sm transition-all focus-within:border-[#2596be] focus-within:ring-2 focus-within:ring-[#2596be]/20 animate-in fade-in slide-in-from-right-10 duration-200">
+                                <input
+                                    type="text"
+                                    placeholder="Pencarian..."
+                                    className="flex-1 border-none bg-transparent text-sm text-gray-800 placeholder-gray-400 outline-none focus:ring-0"
+                                    autoFocus
+                                />
+                                <div className="mx-2 h-6 w-px bg-gray-200"></div>
+                                <Select defaultValue="all">
+                                    <SelectTrigger className="w-auto border-none bg-transparent shadow-none focus:ring-0 focus:ring-offset-0 hover:bg-gray-50/50 rounded-lg h-8 px-3 text-sm font-medium text-gray-700">
+                                        <SelectValue placeholder="Pilih Kategori" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectGroup>
+                                            <SelectItem value="all">All Content</SelectItem>
+                                            <SelectItem value="jurnal">Jurnal</SelectItem>
+                                            <SelectItem value="artikel">Artikel</SelectItem>
+                                            <SelectItem value="buku">Buku</SelectItem>
+                                            <SelectItem value="berita">Berita & Kegiatan</SelectItem>
+                                        </SelectGroup>
+                                    </SelectContent>
+                                </Select>
+                                <button
+                                    type="submit"
+                                    className="ml-1 rounded-full bg-[#2596be] p-2 text-white transition-colors hover:bg-[#1f5476] focus:outline-none"
+                                >
+                                    <Search className="h-4 w-4" />
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setIsSearchOpen(false)}
+                                    className="ml-1 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-700 focus:outline-none"
+                                >
+                                    <X className="h-4 w-4" />
+                                </button>
+                            </form>
+                        )}
+                    </div>
 
                     {/* Auth */}
                     <div className="flex items-center gap-3">
+                        {!isSearchOpen && (
+                            <button
+                                onClick={() => setIsSearchOpen(true)}
+                                className="hidden md:flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition-colors hover:bg-gray-100 hover:text-[#2596be] focus:outline-none"
+                                aria-label="Buka pencarian"
+                            >
+                                <Search className="h-5 w-5" />
+                            </button>
+                        )}
+
                         {auth.user ? (
                             <DropdownMenu>
                                 <DropdownMenuTrigger
@@ -169,15 +230,42 @@ export default function GuestLayout({
                             className="flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 text-[#1f5476] transition hover:border-[#2596be] hover:bg-[#2596be]/5 md:hidden"
                             aria-label="Toggle menu"
                         >
-                            {mobileOpen ? 'Tutup' : 'Menu'}
+                            {mobileOpen ? <X className="h-5 w-5" /> : 'Menu'}
                         </button>
                     </div>
                 </div>
 
                 {/* Mobile Menu */}
                 {mobileOpen && (
-                    <div className="absolute top-full right-0 left-0 border-b border-gray-100 bg-white px-6 pb-4 shadow-lg md:hidden">
-                        <nav className="flex flex-col gap-1 pt-3">
+                    <div className="absolute left-0 right-0 top-full border-b border-gray-100 bg-white px-6 pb-4 shadow-lg md:hidden">
+                        <div className="pt-4 pb-2">
+                            <form className="flex w-full items-center overflow-hidden rounded-xl border border-gray-300 bg-white shadow-sm focus-within:border-[#2596be] focus-within:ring-1 focus-within:ring-[#2596be]">
+                                <input
+                                    type="text"
+                                    placeholder="Pencarian..."
+                                    className="flex-1 border-none bg-transparent py-2 pl-4 text-sm text-gray-800 placeholder-gray-400 outline-none focus:ring-0"
+                                />
+                                <div className="mx-1 h-5 w-px bg-gray-200"></div>
+                                <Select defaultValue="all">
+                                    <SelectTrigger className="w-auto border-none bg-transparent shadow-none focus:ring-0 focus:ring-offset-0 h-8 px-2 text-xs font-medium text-gray-700">
+                                        <SelectValue placeholder="Pilih Kategori" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectGroup>
+                                            <SelectItem value="all">All Content</SelectItem>
+                                            <SelectItem value="jurnal">Jurnal</SelectItem>
+                                            <SelectItem value="artikel">Artikel</SelectItem>
+                                            <SelectItem value="buku">Buku</SelectItem>
+                                            <SelectItem value="berita">Berita & Kegiatan</SelectItem>
+                                        </SelectGroup>
+                                    </SelectContent>
+                                </Select>
+                                <button type="submit" className="bg-[#2596be] p-2.5 text-white hover:bg-[#1f5476] transition-colors">
+                                    <Search className="h-4 w-4" />
+                                </button>
+                            </form>
+                        </div>
+                        <nav className="flex flex-col gap-1 pt-2">
                             {navLinks.map(({ href, label }) => (
                                 <Link
                                     key={href}
