@@ -234,13 +234,13 @@ export default function About() {
                         <div className="h-8 w-0.5 shrink-0 bg-[#2596be]/30"></div>
 
                         {/* WAKIL REKTOR I */}
-                        <OrgNode
+                        {/* <OrgNode
                             title="Wakil Rektor I"
                             name="Prof. Dr. Hennie Husniah, Dra., M.T."
                             photoUrl="/images/wr-1.png"
                             // photoUrl="https://ui-avatars.com/api/?name=WR&background=f8fafc&color=1f5476&bold=true"
                         />
-                        <div className="h-8 w-0.5 shrink-0 bg-[#2596be]/30"></div>
+                        <div className="h-8 w-0.5 shrink-0 bg-[#2596be]/30"></div> */}
 
                         {/* BKKSN */}
                         <OrgNode
