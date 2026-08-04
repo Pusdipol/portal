@@ -92,8 +92,8 @@ jobs:
 
           echo "Bypassing Hostinger CLI PDO limitation..."
           php artisan migrate --force || echo "Migration skipped via CLI. Run via web route or manually."
-          php artisan optimize:clear || true
-          php artisan optimize || true
+          php artisan optimize:clear
+          php artisan optimize
           php artisan storage:link || true
 
           EOF
