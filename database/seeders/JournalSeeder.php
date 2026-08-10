@@ -10,11 +10,11 @@ class JournalSeeder extends Seeder
     public function run(): void
     {
         Journal::firstOrCreate(
-            ['name' => 'Jurnal Studi Kepolisian'],
+            ['name' => 'Next Generation Management and Innovation Review'],
             [
-                'ojs_base_url' => 'http://localhost/ojs/index.php/jsk', // ganti dengan path jurnal OJS asli
+                'ojs_base_url' => 'https://jurnal.pusdipol.com/index.php/ngmir',
                 'logo' => null,
-                'description' => 'Jurnal ilmiah Pusat Studi Kepolisian Universitas Langlangbuana, membahas isu kepolisian, hukum, dan kriminologi.',
+                'description' => 'Next Generation Management and Innovation Review.',
             ]
         );
     }

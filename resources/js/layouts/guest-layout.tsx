@@ -35,9 +35,7 @@ export default function GuestLayout({
 }: {
     children: React.ReactNode;
 }) {
-    const { auth } = usePage().props as {
-        auth: { user: { name: string } | null };
-    };
+    const { auth } = usePage().props;
     const [mobileOpen, setMobileOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -177,17 +175,19 @@ export default function GuestLayout({
                                                 Profil Saya
                                             </Link>
                                         </DropdownMenuItem>
-                                        <DropdownMenuItem
-                                            asChild
-                                            className="cursor-pointer rounded-lg px-3 py-2.5 text-sm font-medium focus:bg-gray-50 focus:text-[#2596be]"
-                                        >
-                                            <Link
-                                                href="/dashboard"
-                                                className="flex w-full items-center"
+                                        {['admin', 'editor'].includes(auth.user.role) && (
+                                            <DropdownMenuItem
+                                                asChild
+                                                className="cursor-pointer rounded-lg px-3 py-2.5 text-sm font-medium focus:bg-gray-50 focus:text-[#2596be]"
                                             >
-                                                Dashboard
-                                            </Link>
-                                        </DropdownMenuItem>
+                                                <Link
+                                                    href="/dashboard"
+                                                    className="flex w-full items-center"
+                                                >
+                                                    Dashboard
+                                                </Link>
+                                            </DropdownMenuItem>
+                                        )}
                                     </DropdownMenuGroup>
                                     <DropdownMenuSeparator className="bg-gray-100" />
                                     <DropdownMenuItem
