@@ -73,6 +73,10 @@ jobs:
             --exclude ".env" \
             --exclude "node_modules" \
             --exclude "storage/logs" \
+            --exclude "storage/app" \
+            --exclude "storage/framework" \
+            --exclude "bootstrap/cache" \
+            --exclude "public/storage" \
             --exclude "jurnal" \
             --exclude "buku" \
             ./ \
@@ -91,9 +95,9 @@ jobs:
           cd ${{ secrets.DEPLOY_PATH }}
 
           echo "Bypassing Hostinger CLI PDO limitation..."
-          php artisan migrate --force || echo "Migration skipped via CLI. Run via web route or manually."
-          php artisan optimize:clear
-          php artisan optimize
-          php artisan storage:link || true
+          php84 artisan migrate --force || echo "Migration skipped via CLI. Run via web route or manually."
+          php84 artisan optimize:clear
+          php84 artisan optimize
+          php84 artisan storage:link || true
 
           EOF

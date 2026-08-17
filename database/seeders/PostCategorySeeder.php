@@ -10,8 +10,7 @@ class PostCategorySeeder extends Seeder
 {
     public function run(): void
     {
-        $categories = ['Berita', 'Kegiatan Riset', 'Pengumuman', 'Call for Papers'];
-
+        $categories = ['Berita', 'Kegiatan Riset', 'Pengumuman', 'Call for Papers', 'Opini'];
         foreach ($categories as $name) {
             PostCategory::firstOrCreate(
                 ['slug' => Str::slug($name)],

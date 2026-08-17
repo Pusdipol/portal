@@ -45,8 +45,13 @@ export default function PublicPostCard({ post }: PublicPostCardProps) {
                 {/* Category badge */}
                 {post.category && (
                     <div className="absolute top-3 left-3">
-                        <span className="inline-flex items-center gap-1 rounded-full bg-[#2596be] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow">
-
+                        <span 
+                            className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider shadow ${
+                                post.category.name === 'Opini' 
+                                    ? 'bg-[#ffe100] text-[#1f5476]' 
+                                    : 'bg-[#2596be] text-white'
+                            }`}
+                        >
                             {post.category.name}
                         </span>
                     </div>
