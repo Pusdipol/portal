@@ -8,6 +8,7 @@ interface Post {
     content: string;
     thumbnail: string | null;
     published_at: string | null;
+    custom_author: string | null;
     category?: { name: string };
     author?: { name: string };
 }
@@ -69,10 +70,9 @@ export default function PostShow({ post }: { post: Post }) {
                             {formattedDate}
                         </span>
                     )}
-                    {post.author && (
+                    {(post.custom_author || post.author) && (
                         <span className="flex items-center gap-1.5 text-sm text-gray-500">
-
-                            {post.author.name}
+                            Oleh: {post.custom_author ? post.custom_author : post.author?.name}
                         </span>
                     )}
                 </div>

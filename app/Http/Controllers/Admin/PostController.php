@@ -30,6 +30,7 @@ class PostController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'category_id' => 'nullable|exists:post_categories,id',
+            'custom_author' => 'nullable|string|max:255',
             'content' => 'required|string',
             'status' => 'required|in:draft,published',
             'thumbnail' => 'nullable|image|max:2048',
@@ -61,6 +62,7 @@ class PostController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'category_id' => 'nullable|exists:post_categories,id',
+            'custom_author' => 'nullable|string|max:255',
             'content' => 'required|string',
             'status' => 'required|in:draft,published',
             'thumbnail' => 'nullable|image|max:2048',
