@@ -38,9 +38,9 @@ jobs:
             composer-${{ runner.os }}-
 
       - name: Install Composer Dependencies
-        env:
-          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{secrets.GITHUB_TOKEN}}"}}'
-        run: composer install --no-dev --prefer-dist --optimize-autoloader
+        run: |
+          composer config --global github-oauth.github.com ${{ secrets.GITHUB_TOKEN }}
+          composer install --no-dev --prefer-dist --optimize-autoloader
 
       ##################################
       # Node
