@@ -52,7 +52,7 @@ jobs:
           cache: npm
 
       - name: Install NPM Packages
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Build Assets
         run: npm run build
