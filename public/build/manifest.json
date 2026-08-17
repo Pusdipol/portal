@@ -746,7 +746,7 @@
     "isEntry": true
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-BaMct9qd.js",
+    "file": "assets/app-CCBjjuwb.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,
@@ -802,21 +802,23 @@
     ]
   },
   "resources/js/pages/admin/books/create.tsx": {
-    "file": "assets/create-B9oW7eSZ.js",
+    "file": "assets/create-Cwf6lfbb.js",
     "name": "create",
     "src": "resources/js/pages/admin/books/create.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-BpbW1mBX.js"
+      "_jsx-runtime-BpbW1mBX.js",
+      "_select-B-ZL-men.js"
     ]
   },
   "resources/js/pages/admin/books/edit.tsx": {
-    "file": "assets/edit-6zGyQxmT.js",
+    "file": "assets/edit-C5xIDva2.js",
     "name": "edit",
     "src": "resources/js/pages/admin/books/edit.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-BpbW1mBX.js"
+      "_jsx-runtime-BpbW1mBX.js",
+      "_select-B-ZL-men.js"
     ]
   },
   "resources/js/pages/admin/books/index.tsx": {
