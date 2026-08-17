@@ -94,6 +94,9 @@ jobs:
 
           cd ${{ secrets.DEPLOY_PATH }}
 
+          echo "Clearing old cache files to prevent Pail/Telescope errors..."
+          rm -f bootstrap/cache/*.php
+
           echo "Bypassing Hostinger CLI PDO limitation..."
           php artisan migrate --force || echo "Migration skipped via CLI. Run via web route or manually."
           php artisan optimize:clear
