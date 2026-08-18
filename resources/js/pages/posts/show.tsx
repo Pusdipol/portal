@@ -1,6 +1,7 @@
 import { Head, Link } from '@inertiajs/react';
 import { ImageOff } from 'lucide-react';
 import GuestLayout from '@/layouts/guest-layout';
+import 'react-quill-new/dist/quill.snow.css';
 
 interface Post {
     id: number;
@@ -88,16 +89,17 @@ export default function PostShow({ post }: { post: Post }) {
                     <div className="h-1 w-4 rounded-full bg-[#ffe100]" />
                 </div>
 
-                {/* Content */}
-                <div
-                    className="prose prose-lg max-w-none text-gray-700
-                        prose-headings:text-[#1f5476] prose-headings:font-bold
-                        prose-a:text-[#2596be] prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
-                        prose-strong:text-[#1f5476]
-                        prose-blockquote:border-l-[#2596be] prose-blockquote:bg-[#2596be]/5 prose-blockquote:rounded-r-xl prose-blockquote:py-1
-                        prose-img:rounded-xl prose-img:shadow-md"
-                    dangerouslySetInnerHTML={{ __html: post.content }}
-                />
+                <div className="ql-snow">
+                    <div
+                        className="ql-editor prose prose-lg max-w-none text-gray-700
+                            prose-headings:text-[#1f5476] prose-headings:font-bold
+                            prose-a:text-[#2596be] prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
+                            prose-strong:text-[#1f5476]
+                            prose-blockquote:border-l-[#2596be] prose-blockquote:bg-[#2596be]/5 prose-blockquote:rounded-r-xl prose-blockquote:py-1
+                            prose-img:rounded-xl prose-img:shadow-md"
+                        dangerouslySetInnerHTML={{ __html: post.content }}
+                    />
+                </div>
 
                 {/* Back */}
                 <div className="mt-12 border-t border-gray-100 pt-8">
