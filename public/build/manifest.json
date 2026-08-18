@@ -559,8 +559,8 @@
       "_input-BgxkKArl.js"
     ]
   },
-  "_post-form-Dvty52Ks.js": {
-    "file": "assets/post-form-Dvty52Ks.js",
+  "_post-form-DEfnLYve.js": {
+    "file": "assets/post-form-DEfnLYve.js",
     "name": "post-form",
     "imports": [
       "_rolldown-runtime-QTnfLwEv.js",
@@ -568,8 +568,12 @@
       "_select-BYF9vUNq.js"
     ],
     "css": [
-      "assets/quill-DVB7LGv8.css"
+      "assets/post-form-DVB7LGv8.css"
     ]
+  },
+  "_post-form-DVB7LGv8.css": {
+    "file": "assets/post-form-DVB7LGv8.css",
+    "src": "_post-form-DVB7LGv8.css"
   },
   "_public-article-card-CUt_27Wc.js": {
     "file": "assets/public-article-card-CUt_27Wc.js",
@@ -627,10 +631,6 @@
       "_use-current-url-kGSnvvdw.js",
       "_wayfinder-Dp7PqxvV.js"
     ]
-  },
-  "_quill-DVB7LGv8.css": {
-    "file": "assets/quill-DVB7LGv8.css",
-    "src": "_quill-DVB7LGv8.css"
   },
   "_react-Cr8LP0Ba.js": {
     "file": "assets/react-Cr8LP0Ba.js",
@@ -755,7 +755,7 @@
     "isEntry": true
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-CH2B9sv5.js",
+    "file": "assets/app-D62IYNXb.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,
@@ -841,23 +841,23 @@
     ]
   },
   "resources/js/pages/admin/posts/create.tsx": {
-    "file": "assets/create-BuOsa4Rc.js",
+    "file": "assets/create-CGQod-8x.js",
     "name": "create",
     "src": "resources/js/pages/admin/posts/create.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D4FO-sNw.js",
-      "_post-form-Dvty52Ks.js"
+      "_post-form-DEfnLYve.js"
     ]
   },
   "resources/js/pages/admin/posts/edit.tsx": {
-    "file": "assets/edit-Cii1bZgu.js",
+    "file": "assets/edit-gUmzcOI4.js",
     "name": "edit",
     "src": "resources/js/pages/admin/posts/edit.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D4FO-sNw.js",
-      "_post-form-Dvty52Ks.js"
+      "_post-form-DEfnLYve.js"
     ]
   },
   "resources/js/pages/admin/posts/index.tsx": {
@@ -1119,7 +1119,7 @@
     ]
   },
   "resources/js/pages/posts/show.tsx": {
-    "file": "assets/show-D9wZTwvK.js",
+    "file": "assets/show-CVNkI1Wt.js",
     "name": "show",
     "src": "resources/js/pages/posts/show.tsx",
     "isDynamicEntry": true,
@@ -1127,9 +1127,6 @@
       "_jsx-runtime-D4FO-sNw.js",
       "_image-off-BPmquI38.js",
       "_guest-layout-PljN_fod.js"
-    ],
-    "css": [
-      "assets/quill-DVB7LGv8.css"
     ]
   },
   "resources/js/pages/search/index.tsx": {
